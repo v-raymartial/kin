@@ -31,8 +31,11 @@ To prepare a local environment for development and testing on a Windows machine 
     # To run the program with default input
     python ./run.py
 
-    # To specify a path
+    # To specify a path with basic mode
     python ./run.py ../../data/file01.txt
     python ./run.py ../../data
+
+    # To specify a path with intelligent mode (w/ an AI or ML approach)
+    python ./run.py ../../data/file01.txt intelligent
    ```
    
