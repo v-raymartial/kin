@@ -15,14 +15,24 @@ To prepare a local environment for development and testing on a Windows machine 
 
 2. **Install Spark**:
 
-    Install "Spark 3.3.1 for Hadoop 3.3+" from https://spark.apache.org/downloads.html into C:\Program Files\Spark
+   Install "Spark 3.3.1 for Hadoop 3.3+" from https://spark.apache.org/downloads.html into C:\Program Files\Spark
 
-    Add SPARK_HOME=C:\Program Files\Spark to system env
+   Add SPARK_HOME=C:\Program Files\Spark to system env
 
-    Add PYSPARK_PYTHON=python to system env
+   Add PYSPARK_PYTHON=python to system env
 
-    Add C:\Program Files\Spark\bin to system Path
+   Add C:\Program Files\Spark\bin to system Path
 
 3. **Run Program**:
 
+   ```bash
+    cd C:\Users\{your-login}\source\repos\kin\src\scan_reader
+
+    # To run the program with default input
+    python ./run.py
+
+    # To specify a path
+    python ./run.py ../../data/file01.txt
+    python ./run.py ../../data
+   ```
    
