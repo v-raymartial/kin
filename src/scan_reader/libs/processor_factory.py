@@ -1,6 +1,8 @@
 from utils.logger import Logger
 from libs.constants import ProcessorTypes
 from libs.basic_processor import BasicProcessor
+from libs.advanced_processor import AdvancedProcessor
+from libs.intelligent_processor import IntelligentProcessor
 
 class ProcessorFactory:
     """
@@ -18,7 +20,11 @@ class ProcessorFactory:
         match processor_type:
             case ProcessorTypes.BASIC:
                 processor = BasicProcessor(path)
+            case ProcessorTypes.ADVANCED:
+                processor = AdvancedProcessor(path)
+            case ProcessorTypes.INTELLIGENT:
+                processor = IntelligentProcessor(path)
             case _:
-                raise NotImplementedError('get_path()')
+                raise NotImplementedError(f'processor type {processor_type}')
         
         return processor
