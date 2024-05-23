@@ -3,6 +3,9 @@ from typing import List
 from utils.logger import Logger
 
 class NumberRecognizer:
+    """
+    A class defining number recognizer to recognize numbers in a given file and output the recognized numbers in a separate file
+    """
     
     _logger = Logger(__name__ + ".NumberRecognizer")
 
