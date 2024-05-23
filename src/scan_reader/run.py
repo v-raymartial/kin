@@ -1,3 +1,4 @@
+import os
 import sys
 from utils.logger import Logger
 from libs.constants import ProcessorTypes
@@ -22,7 +23,9 @@ class Runner:
         self._logger.info(output)
 
 if __name__ == "__main__":
-    path = sys.argv[1] if len(sys.argv) > 1 else "../../data"
+    
+    default_data_path = os.path.join(os.getcwd(), "data")
+    path = sys.argv[1] if len(sys.argv) > 1 else default_data_path
     processor_type = sys.argv[2] if len(sys.argv) > 2 else ProcessorTypes.BASIC
     runner = Runner()
     runner.execute(path, processor_type)
