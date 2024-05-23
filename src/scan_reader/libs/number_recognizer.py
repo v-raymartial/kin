@@ -1,4 +1,3 @@
-from sqlite3 import Row
 from typing import List
 from utils.logger import Logger
 
@@ -18,7 +17,7 @@ class NumberRecognizer:
         :param: path (str) -- path to the file to be processed
         :return: path to the output file
         """
-        self._logger.info(f"Recognizing numbers in the file: {path}")
+        self._logger.info(f"recognizing numbers in the file: {path}")
         
         output_path = f"{path}.output"
         lines = open(path, "r").readlines()

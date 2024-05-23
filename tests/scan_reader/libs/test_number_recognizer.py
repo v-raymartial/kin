@@ -1,7 +1,7 @@
 """ 
-Module providing unite tests for NumberRecognizer 
+Module providing unit tests for NumberRecognizer 
 
-Notes: For demonstration purpose, this is the only unit test file in the project given the limited time
+Notes: For demonstration purpose, this is the only a few unit test files in the project given the limited time
 """
 
 import os
