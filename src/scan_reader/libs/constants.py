@@ -1,5 +1,7 @@
 from enum import Enum
 
+MAX_FILE_COUNT_FOR_SINGLE_MACHINE = 3 # maximum number of files that can be processed by a single machine
+
 class ProcessorTypes(str, Enum):
     """
     A class containing various static parameters enumerating supported processor types
