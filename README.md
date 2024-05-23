@@ -38,4 +38,11 @@ To prepare a local environment for development and testing on a Windows machine 
     # To specify a path with intelligent mode (w/ an AI or ML approach)
     python ./run.py ../../data/file01.txt intelligent
    ```
-   
+4. **Run UnitTests**:
+
+   ```bash
+    cd C:\Users\{your-login}\source\repos\kin
+    python -m pytest tests\scan_reader\libs\test_number_recognizer.py   
+   ```
+
+
