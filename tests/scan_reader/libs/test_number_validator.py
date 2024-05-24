@@ -22,11 +22,12 @@ class TestNumberValidator:
 		pass	
 	
 	# cal table
-	#  0     0     1     3     1
-	# [25,   24,   23,   22,   21,   20,   19,   18,   17  ]
+	#  0      0     1     3     1     0     0     0     0
+	# [217,   216,  215,  214,  213,  212,  211,  210,  209]
 	@pytest.mark.parametrize("input, expected", [
-        ("123456789", False),
-        ("001310000", True )
+		( "123?56789", "ILL" ),
+        ( "223403789", "PAS" ),
+        ( "001310000", "ERR" )
     ])
-	def test_validate_number(self, input: str, expected: bool):
-		self.validator.validate(input) == expected	
+	def test_validate_number(self, input: str, expected: str):
+		assert self.validator.validate(input) == expected

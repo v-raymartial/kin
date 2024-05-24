@@ -1,13 +1,17 @@
 from typing import List
 from utils.logger import Logger
+from libs.number_validator import NumberValidator
+
 
 class NumberRecognizer:
     """
     A class defining number recognizer to recognize numbers in a given file and output the recognized numbers in a separate file
+    :param: validator (NumberValidator) -- validator to validate the recognized numbers. Default is None
     """
     
     _logger = Logger(__name__ + ".NumberRecognizer")
-
+    _validator = NumberValidator()
+    
     def __init__(self) -> None:
         pass
     
@@ -45,6 +49,12 @@ class NumberRecognizer:
                      lines[row_idx+2][col_idx : col_idx+3]
                     
                 line += self.__recognize_number(number_str)
+                
+            # validate the recognized number
+            validate_result = self._validator.validate(line)    
+            if validate_result != "PAS":
+                line += " " + validate_result
+
             number_lines.append(line)
             
         return number_lines
