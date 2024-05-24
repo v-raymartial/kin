@@ -42,7 +42,8 @@ To prepare a local environment for development and testing on a Windows machine 
 
    ```bash
     cd C:\Users\{your-login}\source\repos\kin
-    python -m pytest tests\scan_reader\libs\test_number_recognizer.py   
+    python -m pytest -s tests\scan_reader\libs\test_number_recognizer.py   
+    python -m pytest -s tests\scan_reader\libs\test_number_validator.py
    ```
 
 

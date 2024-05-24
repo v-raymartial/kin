@@ -1,7 +1,7 @@
 """ 
-Module providing unite tests for NumberRecognizer 
+Module providing unit tests for NumberRecognizer 
 
-Notes: For demonstration purpose, this is the only unit test file in the project given the limited time
+Notes: For demonstration purpose, this is the only a few unit test files in the project given the limited time
 """
 
 import os
@@ -29,11 +29,13 @@ class TestNumberRecognizer:
             "  ||_  _|  | _||_|  ||_| _|",
             "                           "
         ]
-        assert number_recognizer._NumberRecognizer__recognize(lines) == ["123456789"]
+        assert number_recognizer._NumberRecognizer__recognize(lines) == ["123456789 ERR"]
         
     def test_execute(self):
         number_recognizer = NumberRecognizer()
         path = os.path.join(os.getcwd(), "data", "file02.txt")
         output_path = number_recognizer.execute(path)
         assert output_path == f"{path}.output"
-        assert open(output_path, "r").read() == "123456789\n789123456\n456123789"       
+        assert open(output_path, "r").read() == "123456789 ERR\n223403789\n223403?89 ILL"       
+        
+        
