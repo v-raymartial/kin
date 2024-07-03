@@ -4,9 +4,8 @@ Module providing unit tests for NumberRecognizer
 Notes: test
 """
 
-from ast import Assert
 import pytest
-from unittest.mock import patch, call, Mock, MagicMock
+from unittest.mock import patch, Mock
 from libs.fizz_buzz import FizzBuzz
 
 class TestFizzBuzz:
@@ -30,12 +29,12 @@ class TestFizzBuzz:
 
     def test_process(self):
         get_fizz_buzz_value_mock = patch.object(FizzBuzz, 'get_fizz_buzz_value', Mock(return_value="test"))
-        get_fizz_buzz_value_mock.start()
+        get_fizz_buzz_value_mock_start = get_fizz_buzz_value_mock.start()
         fizz_buzz = FizzBuzz()
-        fizz_buzz.process(range(1,100))
+        fizz_buzz.process(range(1,101))
         # get_fizz_buzz_value_mock.assert_called_with(range(1,101))
-        assert get_fizz_buzz_value_mock.call_count == 100
-        get_fizz_buzz_value_mock.stop()
+        assert get_fizz_buzz_value_mock_start.call_count == 100
+        get_fizz_buzz_value_mock_start.stop()
 
 # if __name__ == "__main__":
 #     # pytest.main()
