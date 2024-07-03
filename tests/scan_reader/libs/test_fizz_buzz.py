@@ -32,7 +32,6 @@ class TestFizzBuzz:
         get_fizz_buzz_value_mock_start = get_fizz_buzz_value_mock.start()
         fizz_buzz = FizzBuzz()
         fizz_buzz.process(range(1,101))
-        # get_fizz_buzz_value_mock.assert_called_with(range(1,101))
         assert get_fizz_buzz_value_mock_start.call_count == 100
         get_fizz_buzz_value_mock_start.stop()
 
